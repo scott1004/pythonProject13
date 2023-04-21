@@ -1,3 +1,6 @@
+
+import os
+
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -12,5 +15,5 @@ from linebot.models import (
     DatetimePickerAction, PostbackTemplateAction, MessageTemplateAction
 )
 
-line_bot_api = LineBotApi('T6/DxUN5kOosIOLqvXuRzcRUcPhNTHPkMTnFqcdPoSBIMqE7tyiq4maFqoClwAYv0uixE5pN4B/bkBV6FLtelfjn7nc/mSdZdntRC1dJAHFRm/TAV7TDmV9/lIQCbR/U7x53F7ntJUPaIhslcnSARQdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('3f44551992490dccf3d09de1d82df23b')
+line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN', 'T6/DxUN5kOosIOLqvXuRzcRUcPhNTHPkMTnFqcdPoSBIMqE7tyiq4maFqoClwAYv0uixE5pN4B/bkBV6FLtelfjn7nc/mSdZdntRC1dJAHFRm/TAV7TDmV9/lIQCbR/U7x53F7ntJUPaIhslcnSARQdB04t89/1O/w1cDnyilFU='))
+handler = WebhookHandler(os.getenv('CHANNEL_SECRET', '3f44551992490dccf3d09de1d82df23b'))
