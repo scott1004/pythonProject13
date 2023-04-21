@@ -7,10 +7,12 @@ from line_bot_api import *
 from urllib.parse import parse_qsl
 from events.admin import *
 from events.admin2 import *
+import os
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:scott1004@127.0.0.1:5432/eyebrow'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:scott1004@127.0.0.1:5432/eyebrow'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.app = app
 db.init_app(app)
