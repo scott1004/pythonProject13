@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.config.from_object(os.environ.get('APP_SETTINGS', 'config.DevConfig'))
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:scott1004@127.0.0.1:5432/eyebrow'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db.app = app
+# db.app = app
 db.init_app(app)
 migrate.init_app(app, db)
 
